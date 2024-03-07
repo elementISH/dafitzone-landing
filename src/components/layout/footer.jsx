@@ -8,7 +8,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-export default function Footer() {
+export default function footer() {
   return (
     <Box
       bg="secondary.500"
