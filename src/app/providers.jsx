@@ -35,17 +35,17 @@ const theme = extendTheme({
     global: {
       body: {
         bg: "primary.100",
-        overflowX: "clip",
+        overflowX: "hidden",
         color: "secondary.100",
         fontSize: "18px",
-        width: "100vw"
+        width: "100vw",
       },
       html: {
         bg: "primary.100",
-        overflowX: "clip",
+        overflowX: "hidden",
         color: "secondary.100",
         fontSize: "18px",
-        width: "100vw"
+        width: "100vw",
       },
       "#chakra-toast-manager-top-right": {
         top: "4rem !important",
