@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
               Start the change now
             </Button>
           </HStack>
-          <Footer />
+          {/* <Footer /> */}
         </Providers>
       </body>
     </html>
