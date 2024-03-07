@@ -3,7 +3,7 @@ import { Providers } from "./providers";
 import Banner from "@/components/layout/Banner";
 import Content from "@/components/layout/Content";
 import { Button, HStack } from "@chakra-ui/react";
-import Footer from "../components/layout/Footer";
+import Footer from "../components/layout/";
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["500"],
