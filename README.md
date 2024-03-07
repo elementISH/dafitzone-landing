@@ -28,3 +28,8 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 - framer motion
 - NextJS
 - splideJS
+
+---
+
+![app store](./public/appstore.svg)
+![google play](./public/googleplay.svg)
