@@ -3,6 +3,7 @@ import { Providers } from "./providers";
 import Banner from "@/components/layout/Banner";
 import Content from "@/components/layout/Content";
 import { Button, HStack } from "@chakra-ui/react";
+import DafitzoneFooter from "@/components/layout/DafitzoneFooter";
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["500"],
@@ -35,7 +36,7 @@ export default function RootLayout({ children }) {
               Start the change now
             </Button>
           </HStack>
-          {/* <Footer /> */}
+          <DafitzoneFooter />
         </Providers>
       </body>
     </html>

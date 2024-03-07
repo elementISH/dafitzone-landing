@@ -8,7 +8,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-export default function footer() {
+export default function DafitzoneFooter() {
   return (
     <Box
       bg="secondary.500"
