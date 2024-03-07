@@ -1,6 +1,7 @@
 "use client";
 import { CacheProvider } from "@chakra-ui/next-js";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { RtlProvider } from "./providers_rtl";
 const colors = {
   primary: {
     100: "#FFF9F4",
@@ -35,14 +36,14 @@ const theme = extendTheme({
     global: {
       body: {
         bg: "primary.100",
-        overflowX: "hidden",
+        overflowX: "clip",
         color: "secondary.100",
         fontSize: "18px",
         width: "100vw",
       },
       html: {
         bg: "primary.100",
-        overflowX: "hidden",
+        overflowX: "clip",
         color: "secondary.100",
         fontSize: "18px",
         width: "100vw",
@@ -92,7 +93,9 @@ const theme = extendTheme({
 export function Providers({ children }) {
   return (
     <CacheProvider>
-      <ChakraProvider theme={theme}>{children}</ChakraProvider>
+      <ChakraProvider theme={theme}>
+        <RtlProvider>{children}</RtlProvider>
+      </ChakraProvider>
     </CacheProvider>
   );
 }

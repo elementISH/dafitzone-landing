@@ -1,23 +1,16 @@
-"use client";
-import {
-  Flex,
-  Heading,
-  Text,
-  VStack,
-  Box,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import SectionIllustration from "../fragments/SectionIllustration";
 import SectionInfo from "../fragments/SectionInfo";
+import initTranslations from "@/app/i18n";
 
-export default function TrainingSection({
+export default async function TrainingSection({
   odd,
   illustrationsrc,
   image1,
   image2,
+  locale,
 }) {
-  const isMobile = useBreakpointValue({ base: true, lg: false }); // Use a wider breakpoint for mobile
-
+  const { t } = await initTranslations(locale, ["training"]);
   return (
     <>
       <Flex
@@ -25,15 +18,15 @@ export default function TrainingSection({
         py={10}
         px={{ base: "20px", md: "60px" }} // Adjust padding for larger screens
         gap={{ base: "3rem", md: "5rem" }} // Adjust gap based on screen size
-        flexDirection={isMobile ? "column" : odd ? "row-reverse" : "row"}
+        flexDirection={{ base: "column", lg: odd ? "row-reverse" : "row" }}
       >
-        {isMobile ? ( // Render illustration first only on mobile
+        <Box display={{ base: "block", lg: "none" }}>
           <SectionIllustration
             image1={image1}
             image2={image2}
             illustrationsrc={illustrationsrc}
           />
-        ) : null}
+        </Box>
 
         <VStack
           gap={10}
@@ -41,54 +34,59 @@ export default function TrainingSection({
           alignItems="start"
         >
           <VStack gap={5}>
-            <Heading size="sm" color="primary.500" fontWeight={600}>
-              Why choose dafitzone to create exercises?
+            <Heading
+              size="sm"
+              color="primary.500"
+              fontWeight={600}
+              textAlign={"start"}
+              w={"100%"}
+            >
+              {t("mini_header")}
             </Heading>
-            <VStack gap={1}>
+            <VStack gap={1} alignItems={"start"}>
               <Heading
                 size={{ base: "md", md: "lg" }}
                 textAlign={"start"}
                 w={"100%"}
               >
-                Detailed trainings for all levels
+                {t("header")}
               </Heading>
               <Text
                 color="secondary.900"
                 fontSize="sm"
                 textAlign={{ base: "start" }}
+                maxW={"90%"}
               >
-                Get fit anytime, anywhere. Whether you're a beginner or a pro,
-                with or without equipment, our professional trainers will help
-                you reach your fitness goals.
+                {t("description")}
               </Text>
             </VStack>
           </VStack>
-          <VStack gap={5}>
+          <VStack gap={5} alignItems={"start"}>
             <SectionInfo
               icon="1"
-              title="Specialized training programs"
-              description="No matter what your goal or fitness level is, there is a program designed specifically for you that you can practice on the days you prefer and with the tools available."
+              title={t("feature_title")}
+              description={t("feature_description")}
             />
             <SectionInfo
-              icon="1"
-              title="Specialized training programs"
-              description="No matter what your goal or fitness level is, there is a program designed specifically for you that you can practice on the days you prefer and with the tools available."
+              icon="2"
+              title={t("feature_title")}
+              description={t("feature_description")}
             />
             <SectionInfo
-              icon="1"
-              title="Specialized training programs"
-              description="No matter what your goal or fitness level is, there is a program designed specifically for you that you can practice on the days you prefer and with the tools available."
+              icon="3"
+              title={t("feature_title")}
+              description={t("feature_description")}
             />
           </VStack>
         </VStack>
 
-        {isMobile ? null : ( // Render illustration conditionally for non-mobile
+        <Box display={{ base: "none", lg: "block" }}>
           <SectionIllustration
             image1={image1}
             image2={image2}
             illustrationsrc={illustrationsrc}
           />
-        )}
+        </Box>
       </Flex>
     </>
   );

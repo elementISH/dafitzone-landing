@@ -1,7 +1,14 @@
-import { Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import { Heading, Text, VStack } from "@chakra-ui/react";
 import Bubble from "./Bubble";
+import initTranslations from "@/app/i18n";
 
-export default function SliderChip({ indicator, title, description }) {
+export default async function SliderChip({
+  indicator,
+  title,
+  description,
+  locale,
+}) {
+  const { t } = await initTranslations(locale, ["overview"]);
   return (
     <>
       <VStack gap={4} alignItems={"center"}>
@@ -12,14 +19,14 @@ export default function SliderChip({ indicator, title, description }) {
             textAlign={"center"}
             w={"100%"}
           >
-            {title}
+            {t(title)}
           </Heading>
           <Text
             color={"secondary.900"}
             textAlign={{ base: "center", md: "start" }}
             fontSize={{ base: "xs", md: "sm" }}
           >
-            {description}
+            {t(description)}
           </Text>
         </VStack>
       </VStack>

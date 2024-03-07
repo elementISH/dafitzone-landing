@@ -4,6 +4,11 @@ import Banner from "@/components/layout/Banner";
 import Content from "@/components/layout/Content";
 import { Button, HStack } from "@chakra-ui/react";
 import DafitzoneFooter from "@/components/layout/DafitzoneFooter";
+import initTranslations from "../i18n";
+import localFont from "next/font/local";
+const khebrat = localFont({
+  src: "../../fonts/khebrat.ttf",
+});
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["500"],
@@ -12,12 +17,14 @@ export const metadata = {
   title: "Dafitzone",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ params: { locale }, children }) {
+  const { t } = await initTranslations(locale, ["common"]);
+  const dir = locale == "ar" ? "rtl" : "ltr";
   return (
-    <html lang="en">
-      <body className={roboto.className}>
+    <html lang={locale} dir={dir}>
+      <body className={locale == "ar" ? khebrat.className : roboto.className}>
         <Providers>
-          <Banner />
+          <Banner locale={locale} dir={dir} />
           <Content children={children} />
           <HStack
             w={"100%"}
@@ -33,10 +40,10 @@ export default function RootLayout({ children }) {
             justifyContent={"center"}
           >
             <Button variant={"original"} size={{ base: "sm", md: "md" }}>
-              Start the change now
+              {t("change_btn")}
             </Button>
           </HStack>
-          <DafitzoneFooter />
+          <DafitzoneFooter locale={locale} />
         </Providers>
       </body>
     </html>

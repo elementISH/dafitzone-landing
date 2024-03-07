@@ -1,3 +1,4 @@
+import initTranslations from "@/app/i18n";
 import {
   Box,
   Flex,
@@ -8,7 +9,8 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-export default function DafitzoneFooter() {
+export default async function DafitzoneFooter({ locale }) {
+  const { t } = await initTranslations(locale, ["footer"]);
   return (
     <Box
       bg="secondary.500"
@@ -23,20 +25,18 @@ export default function DafitzoneFooter() {
         gap={{ base: 10, lg: 0 }}
       >
         <VStack gap={5} alignItems={{ base: "center", lg: "start" }}>
-          <Heading size={{ base: "lg", lg: "xl" }}>
-            Win your healthiness
-          </Heading>
+          <Heading size={{ base: "lg", lg: "xl" }}>{t("header")}</Heading>
           <Text
             color="inherit"
             fontSize={{ base: "lg", lg: "lg" }}
             w={{ base: "100%", lg: "75%" }}
             textAlign={{ base: " center", lg: "start" }}
           >
-            Download{" "}
+            {t("description_first")}{" "}
             <Text as="span" color="primary.500">
               Dafitzone
             </Text>{" "}
-            now and take the first steps towards a better life.
+            {t("description_second")}
           </Text>
         </VStack>
         <VStack gap={5} alignItems={{ base: "center", lg: "end" }}>

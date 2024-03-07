@@ -1,6 +1,6 @@
+import initTranslations from "@/app/i18n";
 import {
   Box,
-  Flex,
   GridItem,
   Grid,
   Heading,
@@ -9,7 +9,9 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-export default function CompetitveSection() {
+export default async function CompetitveSection({ locale }) {
+  const { t } = await initTranslations(locale, ["competitive"]);
+
   return (
     <Grid
       templateColumns={{ lg: "repeat(3, 1fr)", sm: "1fr" }}
@@ -30,11 +32,9 @@ export default function CompetitveSection() {
           overflow={"hidden"}
         >
           <VStack gap={3}>
-            <Heading size={"md"}>compete with your friends</Heading>
+            <Heading size={"md"}>{t("header")}</Heading>
             <Text fontSize={"sm"} color={"secondary.900"} textAlign={"center"}>
-              Challenge yourself and your friends. Collect points and badges
-              with each exercise, meal, and achievement. Reach higher levels and
-              build healthy habits quicker
+              {t("description")}
             </Text>
           </VStack>
           <Box position={"relative"}>
@@ -60,11 +60,9 @@ export default function CompetitveSection() {
           overflow={"hidden"}
         >
           <VStack gap={3}>
-            <Heading size={"md"}>compete with your friends</Heading>
+            <Heading size={"md"}>{t("header")}</Heading>
             <Text fontSize={"sm"} color={"secondary.900"} textAlign={"center"}>
-              Challenge yourself and your friends. Collect points and badges
-              with each exercise, meal, and achievement. Reach higher levels and
-              build healthy habits quicker
+              {t("description")}
             </Text>
           </VStack>
           <Box position={"relative"}>
@@ -90,11 +88,9 @@ export default function CompetitveSection() {
           overflow={"hidden"}
         >
           <VStack gap={3}>
-            <Heading size={"md"}>compete with your friends</Heading>
+            <Heading size={"md"}> {t("header")}</Heading>
             <Text fontSize={"sm"} color={"secondary.900"} textAlign={"center"}>
-              Challenge yourself and your friends. Collect points and badges
-              with each exercise, meal, and achievement. Reach higher levels and
-              build healthy habits quicker
+              {t("description")}
             </Text>
           </VStack>
           <Box position={"relative"}>

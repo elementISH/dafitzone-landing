@@ -13,7 +13,7 @@ export default function SectionInfo({ icon, title, description }) {
         </HStack>
         <Text
           color={"secondary.900"}
-          fontSize={"xs"}
+          fontSize={{ base: "xs", md: "sm" }}
           maxW={{ base: "100%", md: "75%" }}
         >
           {description}
