@@ -10,7 +10,7 @@ function CenterSlider() {
     type: "loop",
     speed: 1200,
     perPage: 1,
-    width: "14rem",
+    width: "13.5rem",
     height: "24.5rem",
     perMove: 1,
     pagination: false,
