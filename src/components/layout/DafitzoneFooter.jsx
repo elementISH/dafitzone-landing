@@ -45,7 +45,6 @@ export default function DafitzoneFooter() {
             <Image src="googleplay.svg" w={{ base: "40%", lg: "100%" }} />
           </HStack>
           <HStack gap={2}>
-            <Image src="youtube.svg" w="40px" />
             <Image src="facebook.svg" w="40px" />
             <Image src="instagram.svg" w="40px" />
             <Image src="linkedin.svg" w="40px" />
