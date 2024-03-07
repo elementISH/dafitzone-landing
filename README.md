@@ -32,6 +32,6 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 ---
 
 <p align="center">
-[<img src="./public/appstore.svg">](https://www.apple.com/app-store/)
-[<img src="./public/googleplay.svg">](https://play.google.com/store/games?hl=en&gl=US)
+<a href="https://www.apple.com/app-store/"><img src="./public/appstore.svg"></a>
+<a href="https://play.google.com/store/games?hl=en&gl=US"><img src="./public/googleplay.svg"></a>
 <p>
