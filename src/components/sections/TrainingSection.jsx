@@ -16,7 +16,7 @@ export default function TrainingSection({
   image1,
   image2,
 }) {
-  const isMobile = useBreakpointValue({ base: true, md: false }); // Use a wider breakpoint for mobile
+  const isMobile = useBreakpointValue({ base: true, lg: false }); // Use a wider breakpoint for mobile
 
   return (
     <>
@@ -37,7 +37,7 @@ export default function TrainingSection({
 
         <VStack
           gap={10}
-          w={{ base: "100%", md: "50%" }} // Adjust width based on screen size
+          w={{ base: "100%", md: "100%", lg: "50%" }} // Adjust width based on screen size
           alignItems="start"
         >
           <VStack gap={5}>
@@ -45,8 +45,18 @@ export default function TrainingSection({
               Why choose dafitzone to create exercises?
             </Heading>
             <VStack gap={1}>
-              <Heading size="lg">Detailed trainings for all levels</Heading>
-              <Text color="secondary.900" fontSize="sm">
+              <Heading
+                size={{ base: "md", md: "lg" }}
+                textAlign={"start"}
+                w={"100%"}
+              >
+                Detailed trainings for all levels
+              </Heading>
+              <Text
+                color="secondary.900"
+                fontSize="sm"
+                textAlign={{ base: "start" }}
+              >
                 Get fit anytime, anywhere. Whether you're a beginner or a pro,
                 with or without equipment, our professional trainers will help
                 you reach your fitness goals.

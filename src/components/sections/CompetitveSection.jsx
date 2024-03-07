@@ -12,7 +12,7 @@ import {
 export default function CompetitveSection() {
   return (
     <Grid
-      templateColumns={{ md: "repeat(3, 1fr)", sm: "1fr" }}
+      templateColumns={{ lg: "repeat(3, 1fr)", sm: "1fr" }}
       gap={["1rem", "2rem", "3rem"]}
       px={["20px", "40px", "60px"]}
       py={5}

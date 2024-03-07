@@ -2,6 +2,8 @@ import { Roboto } from "next/font/google";
 import { Providers } from "./providers";
 import Banner from "@/components/layout/Banner";
 import Content from "@/components/layout/Content";
+import Footer from "@/components/layout/Footer";
+import { Button, HStack } from "@chakra-ui/react";
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["500"],
@@ -17,6 +19,24 @@ export default function RootLayout({ children }) {
         <Providers>
           <Banner />
           <Content children={children} />
+          <HStack
+            w={"100%"}
+            mt={10}
+            position={"sticky"}
+            bottom={0}
+            zIndex={100}
+            py={5}
+            bg={"opacity.orange_contrasted"}
+            backdropFilter={"auto"}
+            backdropBlur={"4px"}
+            alignItems={"center"}
+            justifyContent={"center"}
+          >
+            <Button variant={"original"} size={{ base: "sm", md: "md" }}>
+              Start the change now
+            </Button>
+          </HStack>
+          <Footer />
         </Providers>
       </body>
     </html>

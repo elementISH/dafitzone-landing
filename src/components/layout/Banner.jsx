@@ -19,13 +19,17 @@ export default function Banner() {
         bg={"opacity.orange"}
       >
         <Flex justifyContent={"space-between"} alignItems={"center"}>
-          <Image src="logo.png" w={120} h={50} />
-          <HStack mb={5}>
+          <Image
+            src="logo.png"
+            w={{ base: "4rem", md: 120 }}
+            h={{ base: "2rem", md: 50 }}
+          />
+          <HStack align={"center"}>
             <Button
               bg={"secondary.500"}
               color={"primary.100"}
               size={{ base: "sm", md: "md" }}
-              display={{ base: "none", md: "block" }}
+              display={{ base: "none", md: "flex" }}
               leftIcon={<Image src="english.svg" w={25} h={25} />}
             >
               English
@@ -36,7 +40,7 @@ export default function Banner() {
               display={{ base: "block", md: "none" }}
               size={{ base: "sm", md: "md" }}
               icon={<Image src="english.svg" w={25} h={25} />}
-            ></IconButton>
+            />
             <Button
               bg={"secondary.100"}
               color={"primary.500"}
@@ -48,11 +52,12 @@ export default function Banner() {
           </HStack>
         </Flex>
         <Flex
-          mt={{ base: "1rem", md: "4rem" }}
+          mt={{ base: "1rem", lg: "4rem" }}
           alignItems={"flex-start"}
-          direction={{ base: "column-reverse", md: "row" }}
+          direction={{ base: "column-reverse", lg: "row" }}
+          gap={5}
         >
-          <Box position={"relative"} mt={{ base: 5, md: 0 }}>
+          <Box position={"relative"} mt={{ base: 5, lg: 0 }}>
             <VStack w={"100%"} alignItems={"flex-start"} gap={8}>
               <VStack alignItems={"flex-start"} gap={2}>
                 <Heading as={"h1"} size={{ base: "lg", md: "xl" }} w={"full"}>
@@ -77,15 +82,15 @@ export default function Banner() {
               top={"120%"}
               w={"20rem"}
               opacity={"0.4"}
-              display={{ base: "none", md: "block" }}
+              display={{ base: "none", lg: "block" }}
             />
           </Box>
           <HStack
             maxW="40rem"
             maxH="35rem"
-            alignItems={{ base: "center", md: "start" }}
-            justifyContent={{ base: "center", md: "start" }}
-            gap={{ base: 5, md: 10 }}
+            alignItems={{ base: "center", lg: "start" }}
+            justifyContent={{ base: "center", lg: "start" }}
+            gap={{ base: 5, lg: 10 }}
           >
             <Image
               src="banner_mockup_1.png"
@@ -96,7 +101,7 @@ export default function Banner() {
               src="banner_mockup_2.png"
               w={{ base: "45%", md: "35%" }}
               h="80%"
-              mt={75}
+              mt={{ base: 75, md: "6rem" }}
             />
           </HStack>
         </Flex>

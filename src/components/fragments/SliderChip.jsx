@@ -6,11 +6,21 @@ export default function SliderChip({ indicator, title, description }) {
     <>
       <VStack gap={4} alignItems={"center"}>
         <Bubble content={indicator} size={25} padding={5} />
-        <VStack gap={1} alignItems={"start"}>
-          <Heading size={"md"} textAlign={"center"} w={"100%"}>
+        <VStack gap={1} alignItems={{ base: "center", md: "start" }}>
+          <Heading
+            size={{ base: "xs", md: "md" }}
+            textAlign={"center"}
+            w={"100%"}
+          >
             {title}
           </Heading>
-          <Text color={"secondary.900"}>{description}</Text>
+          <Text
+            color={"secondary.900"}
+            textAlign={{ base: "center", md: "start" }}
+            fontSize={{ base: "xs", md: "sm" }}
+          >
+            {description}
+          </Text>
         </VStack>
       </VStack>
     </>
