@@ -24,4 +24,7 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 #### This project uses:
 
-- chakra-UI.
+- chakra-UI
+- framer motion
+- NextJS
+- splideJS
