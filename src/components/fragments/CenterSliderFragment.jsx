@@ -17,7 +17,7 @@ function Wrapper({ children }) {
         delay: 0.1,
         duration: 0.5,
         delayChildren: 0.3,
-        staggerChildren: 1,
+        staggerChildren: 0.5,
       },
     },
   };
@@ -49,7 +49,7 @@ function MiniWrapper({ children }) {
         delay: 0.1,
         duration: 0.5,
         delayChildren: 0.3,
-        staggerChildren: 1,
+        staggerChildren: 0.5,
       },
     },
   };
