@@ -1,5 +1,4 @@
 import { Flex } from "@chakra-ui/react";
-
 export default function Bubble({ content, size, padding, font }) {
   return (
     <>
@@ -15,6 +14,7 @@ export default function Bubble({ content, size, padding, font }) {
         borderColor={"primary.500"}
         color={"primary.500"}
         fontSize={font ?? "lg"}
+        fontFamily={"roboto !important"}
       >
         {content}
       </Flex>

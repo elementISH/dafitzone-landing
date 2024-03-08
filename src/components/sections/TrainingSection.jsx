@@ -2,7 +2,7 @@ import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import SectionIllustration from "../fragments/SectionIllustration";
 import SectionInfo from "../fragments/SectionInfo";
 import initTranslations from "@/app/i18n";
-
+import TrainingWrapper from "../motion/TrainingWrapper";
 export default async function TrainingSection({
   odd,
   illustrationsrc,
@@ -25,6 +25,7 @@ export default async function TrainingSection({
             image1={image1}
             image2={image2}
             illustrationsrc={illustrationsrc}
+            start={odd ? "-" : "+"}
           />
         </Box>
 
@@ -61,7 +62,7 @@ export default async function TrainingSection({
               </Text>
             </VStack>
           </VStack>
-          <VStack gap={5} alignItems={"start"}>
+          <TrainingWrapper>
             <SectionInfo
               icon="1"
               title={t("feature_title")}
@@ -77,7 +78,7 @@ export default async function TrainingSection({
               title={t("feature_title")}
               description={t("feature_description")}
             />
-          </VStack>
+          </TrainingWrapper>
         </VStack>
 
         <Box display={{ base: "none", lg: "block" }}>
@@ -85,6 +86,7 @@ export default async function TrainingSection({
             image1={image1}
             image2={image2}
             illustrationsrc={illustrationsrc}
+            start={odd ? "+" : "-"}
           />
         </Box>
       </Flex>

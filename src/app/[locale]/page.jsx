@@ -1,10 +1,13 @@
+import Banner from "@/components/layout/Banner";
 import CompetitveSection from "@/components/sections/CompetitveSection";
 import OverviewSection from "@/components/sections/OverviewSection";
 import TrainingSection from "@/components/sections/TrainingSection";
 
-export default function Page({ params: { locale } }) {
+export default async function Page({ params: { locale } }) {
+  const dir = locale == "ar" ? "rtl" : "ltr";
   return (
     <>
+      <Banner locale={locale} dir={dir} />
       <OverviewSection locale={locale} />
       <TrainingSection
         odd

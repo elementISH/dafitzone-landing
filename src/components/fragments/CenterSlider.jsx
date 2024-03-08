@@ -1,10 +1,9 @@
-"use client";
 import "@splidejs/react-splide/css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import SliderBackground from "@/components/fragments/SliderBackground";
 import { Box, Flex, Image } from "@chakra-ui/react";
 
-function CenterSlider({ dir }) {
+export default function CenterSlider({ dir }) {
   const settings = {
     arrows: false,
     type: "loop",
@@ -51,5 +50,3 @@ function CenterSlider({ dir }) {
     </>
   );
 }
-
-export default CenterSlider;

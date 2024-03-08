@@ -48,6 +48,9 @@ const theme = extendTheme({
         fontSize: "18px",
         width: "100vw",
       },
+      "*:not(html, body)": {
+        fontFamily: "inherit !important",
+      },
       "#chakra-toast-manager-top-right": {
         top: "4rem !important",
       },

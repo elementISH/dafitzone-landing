@@ -11,12 +11,15 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import FramerButton from "../motion/FramerButton";
+import BannerMockups from "../motion/BannerMockups";
 
 export default async function Banner({ locale }) {
   const flag = locale == "ar" ? "english.svg" : "arabic.svg";
   const title = locale == "ar" ? "english" : "العربية";
-  const family = locale == "ar" ? "roboto" : "khebrat";
+  const family = locale == "ar" ? "roboto !important" : "khebrat !important";
   const toggle = locale == "ar" ? "/en" : "/ar";
+  const motiondirection = locale == "ar" ? "-" : "";
   const { t } = await initTranslations(locale, ["banner", "common"]);
   return (
     <>
@@ -33,19 +36,23 @@ export default async function Banner({ locale }) {
             h={{ base: "2rem", md: 50 }}
           />
           <HStack align={"center"} gap={4}>
-            <Button
-              as={Link}
-              bg={"secondary.500"}
-              color={"primary.100"}
-              size={{ base: "sm", md: "md" }}
-              display={{ base: "none", md: "flex" }}
-              leftIcon={<Image src={flag} w={25} h={25} />}
-              fontFamily={family}
-              href={toggle}
-              scroll={false}
-            >
-              {title}
-            </Button>
+            <FramerButton
+              child={
+                <Button
+                  as={Link}
+                  bg={"secondary.500"}
+                  color={"primary.100"}
+                  size={{ base: "sm", md: "md" }}
+                  display={{ base: "none", md: "flex" }}
+                  leftIcon={<Image src={flag} w={25} h={25} />}
+                  fontFamily={family}
+                  href={toggle}
+                  scroll={false}
+                >
+                  {title}
+                </Button>
+              }
+            />
             <IconButton
               as={Link}
               bg={"secondary.500"}
@@ -56,14 +63,18 @@ export default async function Banner({ locale }) {
               href={toggle}
               scroll={false}
             />
-            <Button
-              bg={"secondary.100"}
-              color={"primary.500"}
-              variant={"withShadow"}
-              size={{ base: "sm", md: "md" }}
-            >
-              {t("common:download")}
-            </Button>
+            <FramerButton
+              child={
+                <Button
+                  bg={"secondary.100"}
+                  color={"primary.500"}
+                  variant={"withShadow"}
+                  size={{ base: "sm", md: "md" }}
+                >
+                  {t("common:download")}
+                </Button>
+              }
+            />
           </HStack>
         </Flex>
         <Flex
@@ -90,9 +101,16 @@ export default async function Banner({ locale }) {
                   {t("description")}
                 </Text>
               </VStack>
-              <Button variant={"original"} mx={{ base: "auto", md: "unset" }}>
-                {t("common:change_btn")}
-              </Button>
+              <FramerButton
+                child={
+                  <Button
+                    variant={"original"}
+                    mx={{ base: "auto", md: "unset" }}
+                  >
+                    {t("common:change_btn")}
+                  </Button>
+                }
+              />
             </VStack>
             <Image
               src="man_logo.svg"
@@ -103,25 +121,7 @@ export default async function Banner({ locale }) {
               display={{ base: "none", lg: "block" }}
             />
           </Box>
-          <HStack
-            maxW="40rem"
-            maxH="35rem"
-            alignItems={{ base: "center", lg: "start" }}
-            justifyContent={{ base: "center", lg: "start" }}
-            gap={{ base: 5, lg: 10 }}
-          >
-            <Image
-              src="banner_mockup_1.png"
-              w={{ base: "45%", md: "35%" }}
-              h="80%"
-            />
-            <Image
-              src="banner_mockup_2.png"
-              w={{ base: "45%", md: "35%" }}
-              h="80%"
-              mt={{ base: 75, md: "6rem" }}
-            />
-          </HStack>
+          <BannerMockups start={motiondirection} />
         </Flex>
       </Flex>
     </>

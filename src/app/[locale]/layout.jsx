@@ -6,8 +6,15 @@ import { Button, HStack } from "@chakra-ui/react";
 import DafitzoneFooter from "@/components/layout/DafitzoneFooter";
 import initTranslations from "../i18n";
 import localFont from "next/font/local";
+import FramerButton from "@/components/motion/FramerButton";
 const khebrat = localFont({
-  src: "../../fonts/khebrat.ttf",
+  src: [
+    {
+      path: "../../fonts/khebrat.ttf",
+      weight: "600",
+      style: "normal",
+    },
+  ],
 });
 const roboto = Roboto({
   subsets: ["latin"],
@@ -24,11 +31,10 @@ export default async function RootLayout({ params: { locale }, children }) {
     <html lang={locale} dir={dir}>
       <body className={locale == "ar" ? khebrat.className : roboto.className}>
         <Providers>
-          <Banner locale={locale} dir={dir} />
           <Content children={children} />
           <HStack
             w={"100%"}
-            mt={10}
+            mt={5}
             position={"sticky"}
             bottom={0}
             zIndex={100}
@@ -39,9 +45,13 @@ export default async function RootLayout({ params: { locale }, children }) {
             alignItems={"center"}
             justifyContent={"center"}
           >
-            <Button variant={"original"} size={{ base: "sm", md: "md" }}>
-              {t("change_btn")}
-            </Button>
+            <FramerButton
+              child={
+                <Button variant={"original"} size={{ base: "sm", md: "md" }}>
+                  {t("change_btn")}
+                </Button>
+              }
+            />
           </HStack>
           <DafitzoneFooter locale={locale} />
         </Providers>

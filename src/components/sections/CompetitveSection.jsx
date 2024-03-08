@@ -1,108 +1,75 @@
-import initTranslations from "@/app/i18n";
-import {
-  Box,
-  GridItem,
-  Grid,
-  Heading,
-  Image,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+"use client";
+import { GridItem, Grid } from "@chakra-ui/react";
+import CompetitiveCard from "../motion/CompetitiveCard";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
-export default async function CompetitveSection({ locale }) {
-  const { t } = await initTranslations(locale, ["competitive"]);
-
+function CompetitiveGrid({ children }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.1,
+        staggerChildren: 0.2,
+      },
+    },
+  };
   return (
     <Grid
+      as={motion.div}
+      ref={ref}
+      variants={container}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
       templateColumns={{ lg: "repeat(3, 1fr)", sm: "1fr" }}
       gap={["1rem", "2rem", "3rem"]}
       px={["20px", "40px", "60px"]}
       py={5}
     >
-      <GridItem>
-        <VStack
+      {children}
+    </Grid>
+  );
+}
+
+export default function CompetitveSection({ locale }) {
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
+  return (
+    <CompetitiveGrid>
+      <GridItem as={motion.div} variants={item}>
+        <CompetitiveCard
+          locale={locale}
           backgroundImage={
             "linear-gradient(-180deg, rgba(212, 180, 131, 0.2) 0%, rgba(212, 180, 131, 0.1) 100%)"
           }
-          borderRadius={"10px"}
-          p={5}
-          gap={10}
-          alignItems={"center"}
-          justifyContent={"center"}
-          overflow={"hidden"}
-        >
-          <VStack gap={3}>
-            <Heading size={"md"}>{t("header")}</Heading>
-            <Text fontSize={"sm"} color={"secondary.900"} textAlign={"center"}>
-              {t("description")}
-            </Text>
-          </VStack>
-          <Box position={"relative"}>
-            <Image
-              src="card_screen_1.png"
-              w="80%"
-              mx={"auto"}
-              objectFit={"cover"}
-            />
-          </Box>
-        </VStack>
+        />
       </GridItem>
-      <GridItem>
-        <VStack
+      <GridItem as={motion.div} variants={item}>
+        <CompetitiveCard
+          locale={locale}
           backgroundImage={
             "linear-gradient(-180deg, rgba(200, 135, 55, 0.2) 0%, rgba(200, 135, 55, 0.1) 100%)"
           }
-          borderRadius={"10px"}
-          p={5}
-          gap={10}
-          alignItems={"center"}
-          justifyContent={"center"}
-          overflow={"hidden"}
-        >
-          <VStack gap={3}>
-            <Heading size={"md"}>{t("header")}</Heading>
-            <Text fontSize={"sm"} color={"secondary.900"} textAlign={"center"}>
-              {t("description")}
-            </Text>
-          </VStack>
-          <Box position={"relative"}>
-            <Image
-              src="card_screen_2.png"
-              w="80%"
-              mx={"auto"}
-              objectFit={"cover"}
-            />
-          </Box>
-        </VStack>
+        />
       </GridItem>
-      <GridItem>
-        <VStack
+      <GridItem as={motion.div} variants={item}>
+        <CompetitiveCard
+          locale={locale}
           backgroundImage={
             "linear-gradient(-180deg, rgba(255, 137, 0, 0.2) 0%, rgba(255, 137, 0, 0.1) 100%)"
           }
-          borderRadius={"10px"}
-          p={5}
-          gap={10}
-          alignItems={"center"}
-          justifyContent={"center"}
-          overflow={"hidden"}
-        >
-          <VStack gap={3}>
-            <Heading size={"md"}> {t("header")}</Heading>
-            <Text fontSize={"sm"} color={"secondary.900"} textAlign={"center"}>
-              {t("description")}
-            </Text>
-          </VStack>
-          <Box position={"relative"}>
-            <Image
-              src="card_screen_3.png"
-              w="80%"
-              mx={"auto"}
-              objectFit={"cover"}
-            />
-          </Box>
-        </VStack>
+        />
       </GridItem>
-    </Grid>
+    </CompetitiveGrid>
   );
 }

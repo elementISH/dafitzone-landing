@@ -1,7 +1,6 @@
 import { Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import initTranslations from "@/app/i18n";
 import CenterSliderFragment from "../fragments/CenterSliderFragment";
-
 export default async function OverviewSection({ locale }) {
   const { t } = await initTranslations(locale, ["overview"]);
   return (
