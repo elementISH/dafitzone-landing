@@ -14,12 +14,25 @@ import Link from "next/link";
 import FramerButton from "../motion/FramerButton";
 import BannerMockups from "../motion/BannerMockups";
 
+const translations = {
+  ar: {
+    title: "العربية",
+    family: "khebrat !important",
+    toggle: "/en",
+    motiondirection: "-",
+    flag: "arabic.svg"
+  },
+  en: {
+    title: "English",
+    family: "roboto !important",
+    toggle: "/ar",
+    motiondirection: "",
+    flag: "english.svg"
+  }
+};
+
 export default async function Banner({ locale }) {
-  const flag = locale == "ar" ? "english.svg" : "arabic.svg";
-  const title = locale == "ar" ? "english" : "العربية";
-  const family = locale == "ar" ? "roboto !important" : "khebrat !important";
-  const toggle = locale == "ar" ? "/en" : "/ar";
-  const motiondirection = locale == "ar" ? "-" : "";
+  const { title, family, toggle, motiondirection, flag } = translations[locale];
   const { t } = await initTranslations(locale, ["banner", "common"]);
   return (
     <>
