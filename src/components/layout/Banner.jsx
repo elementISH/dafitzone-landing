@@ -17,7 +17,7 @@ import BannerMockups from "../motion/BannerMockups";
 const translations = {
   ar: {
     title: "العربية",
-    family: "khebrat !important",
+    family: "cairo !important",
     toggle: "/en",
     motiondirection: "-",
     flag: "arabic.svg"
