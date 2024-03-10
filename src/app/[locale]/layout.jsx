@@ -1,4 +1,4 @@
-import { Roboto } from "next/font/google";
+import { Roboto, Cairo } from "next/font/google";
 import { Providers } from "./providers";
 import Banner from "@/components/layout/Banner";
 import Content from "@/components/layout/Content";
@@ -7,18 +7,22 @@ import DafitzoneFooter from "@/components/layout/DafitzoneFooter";
 import initTranslations from "../i18n";
 import localFont from "next/font/local";
 import FramerButton from "@/components/motion/FramerButton";
-const khebrat = localFont({
-  src: [
-    {
-      path: "../../fonts/khebrat.ttf",
-      weight: "600",
-      style: "normal",
-    },
-  ],
-});
+// const khebrat = localFont({
+//  src: [
+//    {
+//      path: "../../fonts/khebrat.ttf",
+//      weight: "600",
+//      style: "normal",
+//    },
+//  ],
+//});
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["500"],
+});
+const cairo = Cairo({
+  subsets: ["latin"],
+  weight: ["400"],
 });
 export const metadata = {
   title: "Dafitzone",
@@ -29,7 +33,7 @@ export default async function RootLayout({ params: { locale }, children }) {
   const dir = locale == "ar" ? "rtl" : "ltr";
   return (
     <html lang={locale} dir={dir}>
-      <body className={locale == "ar" ? khebrat.className : roboto.className}>
+      <body className={locale == "ar" ? cairo.className : roboto.className}>
         <Providers>
           <Content children={children} />
           <HStack
