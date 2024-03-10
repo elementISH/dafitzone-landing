@@ -1,28 +1,18 @@
 import { Roboto, Cairo } from "next/font/google";
 import { Providers } from "./providers";
-import Banner from "@/components/layout/Banner";
 import Content from "@/components/layout/Content";
 import { Button, HStack } from "@chakra-ui/react";
 import DafitzoneFooter from "@/components/layout/DafitzoneFooter";
 import initTranslations from "../i18n";
-import localFont from "next/font/local";
 import FramerButton from "@/components/motion/FramerButton";
-// const khebrat = localFont({
-//  src: [
-//    {
-//      path: "../../fonts/khebrat.ttf",
-//      weight: "600",
-//      style: "normal",
-//    },
-//  ],
-//});
+
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["500"],
+  weight: ["400"],
 });
 const cairo = Cairo({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["500"],
 });
 export const metadata = {
   title: "Dafitzone",

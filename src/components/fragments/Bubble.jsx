@@ -15,6 +15,7 @@ export default function Bubble({ content, size, padding, font }) {
         color={"primary.500"}
         fontSize={font ?? "lg"}
         fontFamily={"roboto !important"}
+        fontWeight={"bold"}
       >
         {content}
       </Flex>

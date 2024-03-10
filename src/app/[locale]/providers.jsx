@@ -48,6 +48,11 @@ const theme = extendTheme({
         fontSize: "18px",
         width: "100vw",
       },
+      "html[lang=ar]": {
+        "h1,h2": {
+          marginBottom: "2% !important",
+        },
+      },
       "*:not(html, body)": {
         fontFamily: "inherit !important",
       },

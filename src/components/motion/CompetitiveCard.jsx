@@ -13,7 +13,7 @@ export default async function CompetitiveCard({ backgroundImage, locale }) {
       justifyContent={"center"}
       overflow={"hidden"}
     >
-      <VStack gap={3}>
+      <VStack gap={1}>
         <Heading size={"md"}> {t("header")}</Heading>
         <Text fontSize={"sm"} color={"secondary.900"} textAlign={"center"}>
           {t("description")}

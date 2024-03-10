@@ -20,7 +20,7 @@ export default function BannerMockups({ start }) {
       animate="visible"
       maxH="35rem"
       alignItems={{ base: "center", lg: "start" }}
-      justifyContent={{ base: "center", lg: "start" }}
+      justifyContent={{ base: "center", lg: "center" }}
       gap={{ base: 5, lg: 10 }}
     >
       <Image src="banner_mockup_1.png" w={{ base: "45%", md: "35%" }} h="80%" />
