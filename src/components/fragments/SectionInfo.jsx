@@ -12,7 +12,13 @@ export default function SectionInfo({ icon, title, description }) {
   };
   return (
     <>
-      <VStack alignItems={"start"} as={motion.div} variants={item}>
+      <VStack
+        alignItems={"start"}
+        as={motion.div}
+        variants={item}
+        flex={1}
+        w={"100%"}
+      >
         <HStack gap={2} alignItems={"center"}>
           <Bubble content={icon} size={"10px"} padding={4} font="md" />
           <Heading size={{ base: "sm", md: "md" }} w={"100%"}>
@@ -22,7 +28,7 @@ export default function SectionInfo({ icon, title, description }) {
         <Text
           color={"secondary.900"}
           fontSize={{ base: "xs", md: "sm" }}
-          maxW={{ base: "100%", md: "75%" }}
+          maxW={{ base: "100%", md: "85%" }}
         >
           {description}
         </Text>

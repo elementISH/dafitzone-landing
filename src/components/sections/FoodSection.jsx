@@ -3,14 +3,14 @@ import SectionIllustration from "../fragments/SectionIllustration";
 import SectionInfo from "../fragments/SectionInfo";
 import initTranslations from "@/app/i18n";
 import TrainingWrapper from "../motion/TrainingWrapper";
-export default async function TrainingSection({
+export default async function FoodSection({
   odd,
   illustrationsrc,
   image1,
   image2,
   locale,
 }) {
-  const { t } = await initTranslations(locale, ["training"]);
+  const { t } = await initTranslations(locale, ["food"]);
   return (
     <>
       <Flex

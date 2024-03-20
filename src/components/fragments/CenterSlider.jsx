@@ -29,22 +29,18 @@ export default function CenterSlider({ dir }) {
           <SliderBackground />
         </Box>
         <Box as={Splide} options={settings}>
-          <Box as={SplideSlide} borderRadius={"50px"}>
-            <Image
-              src="banner_mockup_1.png"
-              w={"12.5rem"}
-              h={"24.5rem"}
-              mx={"auto"}
-            />
-          </Box>
-          <Box as={SplideSlide} borderRadius={"50px"}>
-            <Image
-              src="banner_mockup_2.png"
-              w={"12.5rem"}
-              h={"24.5rem"}
-              mx={"auto"}
-            />
-          </Box>
+          {Array(4)
+            .fill(null)
+            .map((_, index) => (
+              <Box as={SplideSlide} key={index} borderRadius={"50px"}>
+                <Image
+                  src={`slider_mockup_${index + 1}.png`} // Use index + 1 for 1-based indexing
+                  w={"12.5rem"}
+                  h={"24.5rem"}
+                  mx={"auto"}
+                />
+              </Box>
+            ))}
         </Box>
       </Flex>
     </>

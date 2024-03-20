@@ -11,9 +11,9 @@ export default async function SliderChip({
   const { t } = await initTranslations(locale, ["overview"]);
   return (
     <>
-      <VStack gap={4} alignItems={"center"}>
+      <VStack gap={4} alignItems={"center"} maxW={"70%"}>
         <Bubble content={indicator} size={25} padding={5} />
-        <VStack gap={1} alignItems={{ base: "center", md: "start" }}>
+        <VStack gap={1} alignItems={{ base: "center" }}>
           <Heading
             size={{ base: "xs", md: "md" }}
             textAlign={"center"}
@@ -23,7 +23,7 @@ export default async function SliderChip({
           </Heading>
           <Text
             color={"secondary.900"}
-            textAlign={{ base: "center", md: "start" }}
+            textAlign={{ base: "center" }}
             fontSize={{ base: "xs", md: "sm" }}
           >
             {t(description)}

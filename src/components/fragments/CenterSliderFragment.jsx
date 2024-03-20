@@ -82,32 +82,32 @@ export default function CenterSliderFragment({ locale }) {
   return (
     <>
       <Wrapper>
-        <VStack as={motion.div} variants={item} gap={20}>
+        <VStack as={motion.div} variants={item} gap={20} flex={1}>
           <SliderChip
             indicator={"1"}
-            title={"chip_title"}
-            description={"chip_description"}
+            title={"chip_title_coach"}
+            description={"chip_description_coach"}
             locale={locale}
           />
           <SliderChip
-            indicator={"2"}
-            title={"chip_title"}
-            description={"chip_description"}
+            indicator={"3"}
+            title={"chip_title_gym"}
+            description={"chip_description_gym"}
             locale={locale}
           />
         </VStack>
         <CenterSlider dir={dir} />
-        <VStack gap={20} as={motion.div} variants={item}>
+        <VStack gap={20} as={motion.div} variants={item} flex={1}>
           <SliderChip
-            indicator={"3"}
-            title={"chip_title"}
-            description={"chip_description"}
+            indicator={"2"}
+            title={"chip_title_trainee"}
+            description={"chip_description_trainee"}
             locale={locale}
           />
           <SliderChip
             indicator={"4"}
-            title={"chip_title"}
-            description={"chip_description"}
+            title={"chip_title_doctor"}
+            description={"chip_description_doctor"}
             locale={locale}
           />
         </VStack>
@@ -118,28 +118,28 @@ export default function CenterSliderFragment({ locale }) {
           <HStack gap={5} as={motion.div} variants={item}>
             <SliderChip
               indicator={"1"}
-              title={"chip_title"}
-              description={"chip_description"}
+              title={"chip_title_coach"}
+              description={"chip_description_coach"}
               locale={locale}
             />
             <SliderChip
               indicator={"2"}
-              title={"chip_title"}
-              description={"chip_description"}
+              title={"chip_title_gym"}
+              description={"chip_description_gym"}
               locale={locale}
             />
           </HStack>
           <HStack gap={5} as={motion.div} variants={item}>
             <SliderChip
               indicator={"3"}
-              title={"chip_title"}
-              description={"chip_description"}
+              title={"chip_title_trainee"}
+              description={"chip_description_trainee"}
               locale={locale}
             />
             <SliderChip
               indicator={"4"}
-              title={"chip_title"}
-              description={"chip_description"}
+              title={"chip_title_doctor"}
+              description={"chip_description_doctor"}
               locale={locale}
             />
           </HStack>

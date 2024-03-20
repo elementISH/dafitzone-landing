@@ -20,15 +20,15 @@ const translations = {
     family: "cairo !important",
     toggle: "/en",
     motiondirection: "-",
-    flag: "arabic.svg"
+    flag: "arabic.svg",
   },
   en: {
     title: "English",
     family: "roboto !important",
     toggle: "/ar",
     motiondirection: "",
-    flag: "english.svg"
-  }
+    flag: "english.svg",
+  },
 };
 
 export default async function Banner({ locale }) {
@@ -41,7 +41,16 @@ export default async function Banner({ locale }) {
         px={{ base: "20px", md: "60px" }}
         py={"20px"}
         bg={"opacity.orange"}
+        position={"relative"}
       >
+        <Image
+          src="man_logo.svg"
+          position={"absolute"}
+          top={"50%"}
+          w={"20rem"}
+          opacity={"0.4"}
+          display={{ base: "none", lg: "block" }}
+        />
         <Flex justifyContent={"space-between"} alignItems={"center"}>
           <Image
             src="logo.png"
@@ -96,7 +105,7 @@ export default async function Banner({ locale }) {
           direction={{ base: "column-reverse", lg: "row" }}
           gap={5}
         >
-          <Box position={"relative"} mt={{ base: 5, lg: 0 }}>
+          <Box mt={{ base: 5, lg: 0 }}>
             <VStack w={"100%"} alignItems={"flex-start"} gap={8}>
               <VStack alignItems={"flex-start"} gap={2}>
                 <Heading
@@ -109,7 +118,7 @@ export default async function Banner({ locale }) {
                 </Heading>
                 <Text
                   fontSize={{ base: "sm", md: "md" }}
-                  maxW={{ base: "100%", md: "75%" }}
+                  maxW={{ base: "100%", md: "85%" }}
                 >
                   {t("description")}
                 </Text>
@@ -125,14 +134,6 @@ export default async function Banner({ locale }) {
                 }
               />
             </VStack>
-            <Image
-              src="man_logo.svg"
-              position={"absolute"}
-              top={"120%"}
-              w={"20rem"}
-              opacity={"0.4"}
-              display={{ base: "none", lg: "block" }}
-            />
           </Box>
           <BannerMockups start={motiondirection} />
         </Flex>

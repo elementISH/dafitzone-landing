@@ -46,28 +46,46 @@ export default function CompetitveSection({ locale }) {
 
   return (
     <CompetitiveGrid>
-      <GridItem as={motion.div} variants={item}>
+      <GridItem
+        as={motion.div}
+        variants={item}
+        display={"flex"}
+        alignItems={"stretch"}
+      >
         <CompetitiveCard
           locale={locale}
           backgroundImage={
             "linear-gradient(-180deg, rgba(212, 180, 131, 0.2) 0%, rgba(212, 180, 131, 0.1) 100%)"
           }
+          index={1}
         />
       </GridItem>
-      <GridItem as={motion.div} variants={item}>
+      <GridItem
+        as={motion.div}
+        variants={item}
+        display={"flex"}
+        alignItems={"stretch"}
+      >
         <CompetitiveCard
           locale={locale}
           backgroundImage={
             "linear-gradient(-180deg, rgba(200, 135, 55, 0.2) 0%, rgba(200, 135, 55, 0.1) 100%)"
           }
+          index={2}
         />
       </GridItem>
-      <GridItem as={motion.div} variants={item}>
+      <GridItem
+        as={motion.div}
+        variants={item}
+        display={"flex"}
+        alignItems={"stretch"}
+      >
         <CompetitiveCard
           locale={locale}
           backgroundImage={
             "linear-gradient(-180deg, rgba(255, 137, 0, 0.2) 0%, rgba(255, 137, 0, 0.1) 100%)"
           }
+          index={3}
         />
       </GridItem>
     </CompetitiveGrid>
