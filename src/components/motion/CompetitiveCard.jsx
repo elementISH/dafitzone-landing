@@ -18,12 +18,7 @@ export default async function CompetitiveCard({
       overflow={"hidden"}
       flex={1}
     >
-      <VStack gap={1}>
-        <Heading size={"md"}> {t(`header_${index}`)}</Heading>
-        <Text fontSize={"sm"} color={"secondary.900"} textAlign={"center"}>
-          {t(`description_${index}`)}
-        </Text>
-      </VStack>
+      <Heading size={"md"}> {t(`header_${index}`)}</Heading>
       <Box position={"relative"}>
         <Image
           src={`card_screen_${index}.png`}
