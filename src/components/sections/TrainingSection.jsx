@@ -56,7 +56,6 @@ export default async function TrainingSection({
                 color="secondary.900"
                 fontSize="sm"
                 textAlign={{ base: "start" }}
-                maxW={"90%"}
               >
                 {t("description")}
               </Text>

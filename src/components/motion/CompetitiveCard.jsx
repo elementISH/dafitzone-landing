@@ -12,7 +12,7 @@ export default async function CompetitiveCard({
       backgroundImage={backgroundImage}
       borderRadius={"10px"}
       p={5}
-      gap={10}
+      gap={5}
       alignItems={"center"}
       justifyContent={"space-between"}
       overflow={"hidden"}

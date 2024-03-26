@@ -23,6 +23,7 @@ const colors = {
   opacity: {
     orange: "rgba(255, 137, 0, 0.1)",
     orange_contrasted: "rgba(255, 137, 0, 0.2)",
+    orange_2: "rgba(255,137,0,0.2)",
   },
   gradient: {
     100: "linear-gradient(-180deg, rgba(212, 180, 131, 0.5) 0%, rgba(212, 180, 131, 0.3) 100%)",

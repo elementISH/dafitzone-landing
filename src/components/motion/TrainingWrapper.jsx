@@ -19,7 +19,7 @@ export default function TrainingWrapper({ children }) {
   };
   return (
     <VStack
-      gap={5}
+      gap={10}
       alignItems={"start"}
       as={motion.div}
       ref={ref}

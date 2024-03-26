@@ -25,11 +25,7 @@ export default function SectionInfo({ icon, title, description }) {
             {title}
           </Heading>
         </HStack>
-        <Text
-          color={"secondary.900"}
-          fontSize={{ base: "xs", md: "sm" }}
-          maxW={{ base: "100%", md: "85%" }}
-        >
+        <Text color={"secondary.900"} fontSize={{ base: "xs", md: "sm" }}>
           {description}
         </Text>
       </VStack>

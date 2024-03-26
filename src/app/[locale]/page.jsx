@@ -1,17 +1,18 @@
+import AdModal from "@/components/fragments/AdModal";
 import Banner from "@/components/layout/Banner";
 import CompetitveSection from "@/components/sections/CompetitveSection";
 import FoodSection from "@/components/sections/FoodSection";
 import GeneralSection from "@/components/sections/GeneralSection";
 import OverviewSection from "@/components/sections/OverviewSection";
 import TrainingSection from "@/components/sections/TrainingSection";
+import initTranslations from "../i18n";
 
 export default async function Page({ params: { locale } }) {
   const dir = locale == "ar" ? "rtl" : "ltr";
+  const { t } = await initTranslations(locale, ["common"]);
   return (
     <>
-      {Array(4).map((item) => {
-        return <div>asdasdddddddddd</div>;
-      })}
+      <AdModal download={t("common:download")} />
       <Banner locale={locale} dir={dir} />
       <OverviewSection locale={locale} />
       <TrainingSection

@@ -22,7 +22,6 @@ export default async function OverviewSection({ locale }) {
           </Heading>
           <Text
             fontSize={{ base: "xs", md: "md" }}
-            maxW={{ base: "90%", md: "60%" }}
             textAlign={"center"}
             color={"secondary.900"}
           >
