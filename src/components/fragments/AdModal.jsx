@@ -24,10 +24,10 @@ export default function AdModal({ download }) {
         allowPinchZoom={true}
       >
         <ModalOverlay backdropFilter="blur(3px)" />
-        <ModalContent bg={"#ffeedb"} borderRadius={15}>
+        <ModalContent bg={"#ffeedb"} borderRadius={15} w={"90%"}>
           <ModalCloseButton marginStart={0} position={"block"} mx={2} mt={2} />
           <ModalBody>
-            <Image src="gift.png" mx={"auto"} />
+            <Image src="gift.svg" mx={"auto"} w={400} />
           </ModalBody>
 
           <ModalFooter justifyContent={"center"}>
