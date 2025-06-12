@@ -32,6 +32,10 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 - emotion
 - i18next
 
+#### Known issues:
+
+- Layout shift before image loads in AD modal
+
 ---
 
 <p align="center">
